@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    signingConfigs {
+        myConfig {
+            keyAlias 'ngnandroidstack'
+            keyPassword '123456'
+            storeFile file('/Users/sun/Desktop/log')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 19
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 19
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.myConfig
+            //混淆
+            minifyEnabled true
+            //对齐
+            zipAlignEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "ngnandroidstack_v" + defaultConfig.versionName + "_release.aar"
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file('../ngnandroidstack.jks')
+            storePassword '123456'
+            keyAlias 'ngnandroidstack'
+            keyPassword '123456'
+        }
+    }
+    dexOptions {
+
+        incremental true
+        jumboMode true
+        javaMaxHeapSize "4g"
+
+
+    }
+}
+
+dependencies {
+    //    implementation files('libs/YTControl.jar')
+    //    implementation files('libs/android-support-v13.jar')
+    //    implementation files('libs/jdom.jar')
+    //    implementation files('libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar')
+    //    implementation files('libs/pinyin4j-2.5.0.jar')
+    //    implementation files('libs/simple-xml-2.3.4.jar')
+
+
+//        compile 'io.reactivex:rxjava:1.0.1'
+//        compile 'io.reactivex:rxandroid:1.0.1'
+//        compile 'com.squareup.retrofit2:retrofit:2.0.2'
+//        compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+//        compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+//        compile 'com.squareup.retrofit2:converter-scalars:2.0.2'
+
+
+
+    implementation files('libs/adapter-rxjava-2.0.2.jar')
+    implementation files('libs/classes.jar')
+    implementation files('libs/converter-gson-2.0.2.jar')
+    implementation files('libs/converter-scalars-2.0.2.jar')
+    implementation files('libs/okhttp-2.5.0.jar')
+    implementation files('libs/okhttp-3.2.0.jar')
+    implementation files('libs/okio-1.6.0.jar')
+    implementation files('libs/retrofit-2.0.2.jar')
+    implementation files('libs/rxjava-1.1.1.jar')
+}

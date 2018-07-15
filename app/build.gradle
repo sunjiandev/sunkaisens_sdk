@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('/Users/sun/Desktop/Untitled')
+            storePassword '123456'
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "demo.skdroid.sunkaisens.com.skdroid_demo"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        multiDexEnabled true
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "skdroidim_v" + defaultConfig.versionName + "_release.apk"
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file('../SKDroidIM.jks')
+            storePassword '123456'
+            keyAlias 'SKDroidIM'
+            keyPassword '123456'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':androidngnstack')
+    implementation 'com.jakewharton:butterknife:8.0.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.0.1'
+
+//    implementation 'com.alibaba:fastjson:1.2.35'
+
+    compile 'org.greenrobot:eventbus:3.1.1'
+
+}

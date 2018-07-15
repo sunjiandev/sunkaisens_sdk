@@ -1,0 +1,4 @@
+org.doubango.ngn
+int drawable icon 0x7f090001
+int string app_name 0x7f150001
+int string libs_version 0x7f150002

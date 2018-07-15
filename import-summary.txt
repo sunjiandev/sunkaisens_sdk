@@ -1,0 +1,94 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* Doxyfile
+* android-ngn-stack.tag
+* default.properties
+* installdox.sh
+* proguard.cfg
+* rtf/
+* rtf/FreeSans.ttf
+* rtf/classorg_1_1doubango_1_1ngn_1_1events_1_1_ngn_event_args.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1events_1_1_ngn_invite_event_args.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1events_1_1_ngn_stack_event_args.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1events_1_1_ngn_string_event_args.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1media_1_1_ngn_proxy_audio_consumer.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1media_1_1_ngn_proxy_audio_producer.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1media_1_1_ngn_proxy_plugin.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1media_1_1_ngn_proxy_video_consumer.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1media_1_1_ngn_proxy_video_producer.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1services_1_1impl_1_1_ngn_base_service.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1services_1_1impl_1_1_ngn_contact_service.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1services_1_1impl_1_1_ngn_http_client_service.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1services_1_1impl_1_1_ngn_network_service.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1services_1_1impl_1_1_ngn_sound_service.png
+* rtf/classorg_1_1doubango_1_1ngn_1_1services_1_1impl_1_1_ngn_storage_service.png
+* rtf/refman.rtf
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+gson-2.8.0.jar => com.google.code.gson:gson:2.8.0
+
+Potentially Missing Dependency:
+-------------------------------
+When we replaced the following .jar files with a Gradle dependency, we
+inferred the dependency version number from the filename. This
+specific version may not actually be available from the repository.
+If you get a build error stating that the dependency is missing, edit
+the version number to for example "+" to pick up the latest version
+instead. (This may require you to update your code if the library APIs
+have changed.)
+
+gson-2.8.0.jar => version 2.8.0 in com.google.code.gson:gson:2.8.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => androidngnstack2/src/main/AndroidManifest.xml
+* assets/ => androidngnstack2/src/main/assets/
+* libs/YTControl.jar => androidngnstack2/libs/YTControl.jar
+* libs/android-support-v13.jar => androidngnstack2/libs/android-support-v13.jar
+* libs/armeabi-v7a/libcatchcrash.so => androidngnstack2/src/main/jniLibs/armeabi-v7a/libcatchcrash.so
+* libs/armeabi-v7a/libplugin_audio_opensles.so => androidngnstack2/src/main/jniLibs/armeabi-v7a/libplugin_audio_opensles.so
+* libs/armeabi-v7a/libtinyWRAP.so => androidngnstack2/src/main/jniLibs/armeabi-v7a/libtinyWRAP.so
+* libs/armeabi-v7a/libtinyWRAP_neon.so => androidngnstack2/src/main/jniLibs/armeabi-v7a/libtinyWRAP_neon.so
+* libs/armeabi-v7a/libutils_armv5te.so => androidngnstack2/src/main/jniLibs/armeabi-v7a/libutils_armv5te.so
+* libs/jdom.jar => androidngnstack2/libs/jdom.jar
+* libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar => androidngnstack2/libs/ksoap2-android-assembly-3.0.0-jar-with-dependencies.jar
+* libs/pinyin4j-2.5.0.jar => androidngnstack2/libs/pinyin4j-2.5.0.jar
+* libs/simple-xml-2.3.4.jar => androidngnstack2/libs/simple-xml-2.3.4.jar
+* libs/zxing.jar => androidngnstack2/libs/zxing.jar
+* res/ => androidngnstack2/src/main/res/
+* src/ => androidngnstack2/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

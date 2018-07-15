@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">android-sip-stack</string>
+    <string name="libs_version">ver18-20160615</string>
+</resources>
